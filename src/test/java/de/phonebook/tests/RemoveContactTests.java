@@ -1,6 +1,7 @@
 package de.phonebook.tests;
 
 import de.phonebook.core.TestBase;
+import de.phonebook.data.UserData;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -13,8 +14,8 @@ public class RemoveContactTests extends TestBase {
         }
         app.getUser().clickOnLoginLink();
         app.getUser().fillLoginRegisterForm(new de.phonebook.model.User()
-                .setEmail("michael1986@gmail.com")
-                .setPassword("1234$Qwe"));
+                .setEmail(UserData.EMAIL)
+                .setPassword(UserData.PASSWORD));
         app.getUser().clickOnLoginButton();
 
         app.getContact().clickOnAddLink();
@@ -22,7 +23,7 @@ public class RemoveContactTests extends TestBase {
                 .setName("Michael")
                 .setLastname("Schwartz")
                 .setPhone("49064836797")
-                .setEmail("michael86@gmail.com")
+                .setEmail(UserData.EMAIL)
                 .setAddress("Israel")
                 .setDescription("goalkeeper"));
         app.getContact().clickOnSaveButton();
